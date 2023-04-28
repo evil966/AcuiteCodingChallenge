@@ -65,14 +65,24 @@
 
     <div class="float-end">
         <div class="form-outline float-start">
-            <input type="text" id="searchBy" class="form-control" placeholder="Search term" />
+            <input type="text" id="searchBy" name="searchBy" class="form-control" placeholder="Search term" />
         </div>
         <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown">
             Search By:
         </button>
         <ul class="dropdown-menu">
             <li><a href="#" class="dropdown-item">Author Name</a></li>
-            <li><a href="#" class="dropdown-item">Book Title</a></li>
+            <li>
+                @Ajax.ActionLink("Book Title", "title", "Home",
+                new { searchBy = "dummy" },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                },
+                new { @class = "dropdown-item", @id = "searchByTitle" })
+            </li>
         </ul>
     </div>
 
@@ -80,18 +90,18 @@
 
     <table cellpadding="5">
         <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Catagory</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Catagory</th>
         </tr>
-            @foreach (var b in Model)
-            {
-                <tr>
-                    <td>@b.Title</td>
-                    <td>@b.Author</td>
-                    <td>@b.Category</td>
-                </tr>
-            }
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Author</td>
+                <td>@b.Category</td>
+            </tr>
+        }
     </table>
 
 
@@ -99,4 +109,12 @@
 
 @section scripts{
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        $(function () {
+            $("#searchBy").change(function () {
+                var data = document.getElementById("searchBy").value;
+                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("dummy", data));
+            })
+        });
+    </script>
 }

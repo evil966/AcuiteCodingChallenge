@@ -62,17 +62,17 @@ namespace AcuiteCodingChallenge.Controllers
 
 		[HttpGet]
 		[ActionName("title")]
-		public async Task<ActionResult> BooksByTitle(string title)
+		public async Task<ActionResult> BooksByTitle(string searchBy)
 		{
-			var books = await BookServices.GetBooksByTitle(title);
+			var books = await BookServices.GetBooksByTitle(searchBy);
 			return PartialView("Index", books);
 		}
 
 		[HttpGet]
 		[ActionName("author")]
-		public async Task<ActionResult> BooksByAuthor(string author)
+		public async Task<ActionResult> BooksByAuthor(string searchBy)
 		{
-			var books = await BookServices.GetBooksByAuthor(author);
+			var books = await BookServices.GetBooksByAuthor(searchBy);
 			return PartialView("Index", books);
 		}
 
