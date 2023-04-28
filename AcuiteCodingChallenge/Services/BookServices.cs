@@ -20,7 +20,7 @@ namespace AcuiteCodingChallenge.Services
 
 		public static async Task<IEnumerable<Book>> GetBooksByTitle(string title) => await GetBooks($"api/book/title/{title}");
 
-		public static async Task<IEnumerable<Book>> GetBooksByAuthor(string author) => await GetBooks($"api/book/title/{author}");
+		public static async Task<IEnumerable<Book>> GetBooksByAuthor(string author) => await GetBooks($"api/book/author/{author}");
 
 		private static async Task<IEnumerable<Book>> GetBooks(string endpoint)
 		{
