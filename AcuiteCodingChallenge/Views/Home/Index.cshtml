@@ -15,56 +15,21 @@
                     HttpMethod = "GET"
                 }, new { @class = "dropdown-item" })
             </li>
-            <li>
-                @Ajax.ActionLink("Computer Science", "category", null,
-                new { category = "ComputerScience" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
-            </li>
-            <li>
-                @Ajax.ActionLink("Physics", "category", null,
-                new { category = "Physics" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
-            </li>
-            <li>
-                @Ajax.ActionLink("History", "category", null,
-                new { category = "History" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
-            </li>
-            <li>
-                @Ajax.ActionLink("Geography", "category", null,
-                new { category = "Geography" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
-            </li>
-            <li>
-                @Ajax.ActionLink("Travel", "category", null,
-                new { category = "Travel" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
-            </li>
+            
+            @foreach (var cat in ViewData["Categories"] as List<string>)
+            {
+                string[] category = cat.Split('|');
+                <li>
+                    @Ajax.ActionLink(category[0], "category", null,
+                    new { category = category[1]},
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "listOfBooks",
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "GET"
+                    }, new { @class = "dropdown-item" })
+                </li>
+            }
         </ul>
     </div>
 

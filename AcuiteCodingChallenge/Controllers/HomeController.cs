@@ -1,4 +1,5 @@
 ﻿using AcuiteCodingChallenge.Services;
+using AcuiteCodingChallenge.ViewModels;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -6,6 +7,8 @@ namespace AcuiteCodingChallenge.Controllers
 {
     public class HomeController : Controller
 	{
+        public HomeController() => this.ViewData["Categories"] = CategoryOptions.Get();
+
 		public async Task<ActionResult> Index()
 		{
 			var books = await BookServices.GetAll();
