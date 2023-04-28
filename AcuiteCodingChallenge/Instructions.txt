@@ -1,0 +1,37 @@
+﻿This project is a very simple MVC application that loads a list of Books from a fake database and displays them
+on screen. Feel free to run the application to see what is already complete.
+
+
+Part 1: Complete the functionality required to filter books by category
+
+- The 'Filter By' dropdown should modify the main list of books to only show those in the selected category
+- The page must not be reloaded when filtering the list
+
+Part 2: Implement a search function
+
+- Add something to the page to allow users to search for books by author name and book title
+- It should allow users to type in a search term
+- The page must not be reloaded when applying the search
+
+
+Feel free to use any frameworks/libraries/techniques that you like
+
+
+Part 3: Improve the code
+
+The code works, but there are a few areas that could do with some improvement. Maybe there are some bugs,
+or things missing that would make it a more complete and high quality solution. Think about concepts like code
+readability/maintainability/consistency, the SOLID design principles, MVC best practices, unit testing, even
+think if anything could be improved from a UI / UX standpoint.
+
+Try and imagine that this is just part of a much larger book-related application, with multiple developers working
+on the system at once.
+
+There is no single right answer here, we just want to see what you would consider to be top-quality code.
+
+
+
+Important:
+
+- Do not modify the contents of the Database.cs file. This file simply mimics a data store and is not part of the challenge.
+- You are welcome to use/extend the code/classes in Database.cs in different ways, however, should you wish to.

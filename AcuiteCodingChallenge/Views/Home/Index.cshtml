@@ -1,0 +1,102 @@
+﻿@model IEnumerable<AcuiteCodingChallenge.Entities.Book>
+
+<div id="listOfBooks">
+    <div class="dropdown float-end">
+        <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Filter By:
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                @Ajax.ActionLink("All Books", "all", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Computer Science", "cs", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Physics", "physics", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+            <li>
+                @Ajax.ActionLink("History", "history", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Geography", "geography", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Travel", "travel", null,
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                }, new { @class = "dropdown-item" })
+            </li>
+        </ul>
+    </div>
+
+    <div class="float-end">
+        <div class="form-outline float-start">
+            <input type="text" id="searchBy" class="form-control" placeholder="Search term" />
+        </div>
+        <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Search By:
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Author Name</a></li>
+            <li><a href="#" class="dropdown-item">Book Title</a></li>
+        </ul>
+    </div>
+
+    <h3>Books</h3>
+
+    <table cellpadding="5">
+        <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Catagory</th>
+        </tr>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td>@b.Title</td>
+                    <td>@b.Author</td>
+                    <td>@b.Category</td>
+                </tr>
+            }
+    </table>
+
+
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
