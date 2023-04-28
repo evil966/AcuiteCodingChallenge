@@ -21,58 +21,18 @@ namespace AcuiteCodingChallenge.Controllers
 		}
 
 		[HttpGet]
-		[ActionName("physics")]
-		public async Task<ActionResult> BooksByCategoryPhysics()
+		[ActionName("category")]
+		public async Task<ActionResult> BooksByCategory(string category)
 		{
-			var books = await BookServices.GetBooksByCategory("Physics");
+			var books = await BookServices.GetBooksByCategory(category);
 			return PartialView("Index", books);
 		}
 
 		[HttpGet]
-		[ActionName("cs")]
-		public async Task<ActionResult> BooksByCategoryCS()
-		{
-			var books = await BookServices.GetBooksByCategory("ComputerScience");
-			return PartialView("Index", books);
-		}
-
-		[HttpGet]
-		[ActionName("history")]
-		public async Task<ActionResult> BooksByCategoryHistory()
-		{
-			var books = await BookServices.GetBooksByCategory("History");
-			return PartialView("Index", books);
-		}
-
-		[HttpGet]
-		[ActionName("geography")]
-		public async Task<ActionResult> BooksByCategoryGeography()
-		{
-			var books = await BookServices.GetBooksByCategory("Geography");
-			return PartialView("Index", books);
-		}
-
-		[HttpGet]
-		[ActionName("travel")]
-		public async Task<ActionResult> BooksByCategoryFiction()
-		{
-			var books = await BookServices.GetBooksByCategory("Travel");
-			return PartialView("Index", books);
-		}
-
-		[HttpGet]
-		[ActionName("title")]
+		[ActionName("search")]
 		public async Task<ActionResult> BooksByTitle(string searchBy)
 		{
 			var books = await BookServices.GetBooksByTitle(searchBy);
-			return PartialView("Index", books);
-		}
-
-		[HttpGet]
-		[ActionName("author")]
-		public async Task<ActionResult> BooksByAuthor(string searchBy)
-		{
-			var books = await BookServices.GetBooksByAuthor(searchBy);
 			return PartialView("Index", books);
 		}
 

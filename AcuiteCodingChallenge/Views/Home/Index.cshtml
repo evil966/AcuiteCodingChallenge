@@ -16,7 +16,8 @@
                 }, new { @class = "dropdown-item" })
             </li>
             <li>
-                @Ajax.ActionLink("Computer Science", "cs", null,
+                @Ajax.ActionLink("Computer Science", "category", null,
+                new { category = "ComputerScience" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -25,7 +26,8 @@
                 }, new { @class = "dropdown-item" })
             </li>
             <li>
-                @Ajax.ActionLink("Physics", "physics", null,
+                @Ajax.ActionLink("Physics", "category", null,
+                new { category = "Physics" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -34,7 +36,8 @@
                 }, new { @class = "dropdown-item" })
             </li>
             <li>
-                @Ajax.ActionLink("History", "history", null,
+                @Ajax.ActionLink("History", "category", null,
+                new { category = "History" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -43,7 +46,8 @@
                 }, new { @class = "dropdown-item" })
             </li>
             <li>
-                @Ajax.ActionLink("Geography", "geography", null,
+                @Ajax.ActionLink("Geography", "category", null,
+                new { category = "Geography" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -52,7 +56,8 @@
                 }, new { @class = "dropdown-item" })
             </li>
             <li>
-                @Ajax.ActionLink("Travel", "travel", null,
+                @Ajax.ActionLink("Travel", "category", null,
+                new { category = "Travel" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -73,7 +78,7 @@
         <ul class="dropdown-menu">
             <li><a href="#" class="dropdown-item">Author Name</a></li>
             <li>
-                @Ajax.ActionLink("Book Title", "title", "Home",
+                @Ajax.ActionLink("Book Title", "search", null,
                 new { searchBy = "dummy" },
                 new AjaxOptions
                 {
