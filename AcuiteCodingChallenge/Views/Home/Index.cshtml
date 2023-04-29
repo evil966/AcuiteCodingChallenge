@@ -41,10 +41,20 @@
             Search By:
         </button>
         <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Author Name</a></li>
             <li>
-                @Ajax.ActionLink("Book Title", "search", null,
-                new { searchBy = "dummy" },
+                @Ajax.ActionLink("Author Name", "author", null,
+                new { searchBy = "(^_^)" },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "listOfBooks",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                },
+                new { @class = "dropdown-item", @id = "searchByAuthor" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Book Title", "title", null,
+                new { searchBy = "(^_^)" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -81,9 +91,11 @@
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script>
         $(function () {
-            $("#searchBy").change(function () {
-                var data = document.getElementById("searchBy").value;
-                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("dummy", data));
+            $("#searchBy").focusout(function () {
+                var data = $("#searchBy").val();
+                console.log(data);
+                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("(^_^)", data));
+                $("#searchByAuthor").attr("href", $("#searchByAuthor").attr("href").replace("(^_^)", data));
             })
         });
     </script>
