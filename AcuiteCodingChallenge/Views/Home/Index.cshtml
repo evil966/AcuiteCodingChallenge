@@ -89,14 +89,5 @@
 
 @section scripts{
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    <script>
-        $(function () {
-            $("#searchBy").focusout(function () {
-                var data = $("#searchBy").val();
-                console.log(data);
-                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("dummy", data));
-                $("#searchByAuthor").attr("href", $("#searchByAuthor").attr("href").replace("dummy", data));
-            })
-        });
-    </script>
+    <script src="~/Scripts/acuite-code-challenge.search.js"></script>
 }

@@ -18,15 +18,15 @@ namespace AcuiteCodingChallenge.Api.Controllers
         public IEnumerable<Book> Get() => _repository.GetAll();
 
         [HttpGet]
-        [ActionName("Category")]
+        [ActionName("category")]
         public IEnumerable<Book> GetCategory(string id) => _repository.Get((b) => b.Category.ToString().Equals(id, StringComparison.OrdinalIgnoreCase));
 
         [HttpGet]
-        [ActionName("Title")]
+        [ActionName("title")]
         public IEnumerable<Book> GetBooksByTitle(string id) => _repository.Get((b) => b.Title.ToLower().Contains(id.ToLower()));
 
         [HttpGet]
-        [ActionName("Author")]
+        [ActionName("author")]
         public IEnumerable<Book> GetBooksByAuthor(string id) => _repository.Get((b) => b.Author.ToLower().Contains(id.ToLower()));
 
     }
