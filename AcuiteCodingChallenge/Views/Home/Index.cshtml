@@ -43,7 +43,7 @@
         <ul class="dropdown-menu">
             <li>
                 @Ajax.ActionLink("Author Name", "author", null,
-                new { searchBy = "(^_^)" },
+                new { searchBy = "dummy" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -54,7 +54,7 @@
             </li>
             <li>
                 @Ajax.ActionLink("Book Title", "title", null,
-                new { searchBy = "(^_^)" },
+                new { searchBy = "dummy" },
                 new AjaxOptions
                 {
                     UpdateTargetId = "listOfBooks",
@@ -94,8 +94,8 @@
             $("#searchBy").focusout(function () {
                 var data = $("#searchBy").val();
                 console.log(data);
-                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("(^_^)", data));
-                $("#searchByAuthor").attr("href", $("#searchByAuthor").attr("href").replace("(^_^)", data));
+                $("#searchByTitle").attr("href", $("#searchByTitle").attr("href").replace("dummy", data));
+                $("#searchByAuthor").attr("href", $("#searchByAuthor").attr("href").replace("dummy", data));
             })
         });
     </script>
