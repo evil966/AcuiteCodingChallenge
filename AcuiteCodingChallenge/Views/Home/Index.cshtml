@@ -16,7 +16,7 @@
                 }, new { @class = "dropdown-item" })
             </li>
             
-            @foreach (var cat in ViewData["Categories"] as List<string>)
+            @foreach (var cat in ViewBag.Categories)
             {
                 string[] category = cat.Split('|');
                 <li>
