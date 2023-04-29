@@ -1,7 +1,10 @@
 ﻿using AcuiteCodingChallenge.Core.Constants;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace AcuiteCodingChallenge.ViewModels
+namespace AcuiteCodingChallenge.Helpers
 {
     public static class CategoryOptions
     {

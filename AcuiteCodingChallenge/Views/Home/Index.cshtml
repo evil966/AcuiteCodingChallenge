@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AcuiteCodingChallenge.Core.Entities.Book>
+﻿@model AcuiteCodingChallenge.ViewModels.IndexVm
 
 <div id="listOfBooks">
     <div class="dropdown float-end">
@@ -16,7 +16,7 @@
                 }, new { @class = "dropdown-item" })
             </li>
             
-            @foreach (KeyValuePair<string, string> category in ViewBag.Categories)
+            @foreach (KeyValuePair<string, string> category in Model.FilterCategories)
             {
                 <li>
                     @Ajax.ActionLink(category.Key, "category", null,
@@ -73,7 +73,7 @@
             <th>Author</th>
             <th>Catagory</th>
         </tr>
-        @foreach (var b in Model)
+        @foreach (var b in Model.Books)
         {
             <tr>
                 <td>@b.Title</td>
