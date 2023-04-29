@@ -16,12 +16,11 @@
                 }, new { @class = "dropdown-item" })
             </li>
             
-            @foreach (var cat in ViewBag.Categories)
+            @foreach (KeyValuePair<string, string> category in ViewBag.Categories)
             {
-                string[] category = cat.Split('|');
                 <li>
-                    @Ajax.ActionLink(category[0], "category", null,
-                    new { category = category[1]},
+                    @Ajax.ActionLink(category.Key, "category", null,
+                    new { category = category.Value},
                     new AjaxOptions
                     {
                         UpdateTargetId = "listOfBooks",
