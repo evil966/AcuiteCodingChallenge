@@ -190,9 +190,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcuiteCodingChallenge.Entities\AcuiteCodingChallenge.Entities.csproj">
-      <Project>{62d15287-45a0-47a5-bb26-1fd79b8c9cba}</Project>
-      <Name>AcuiteCodingChallenge.Entities</Name>
+    <ProjectReference Include="..\AcuiteCodingChallenge.Core\AcuiteCodingChallenge.Core.csproj">
+      <Project>{e7024586-891f-421f-9062-e4d9c010eba0}</Project>
+      <Name>AcuiteCodingChallenge.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\AcuiteCodingChallenge.Repository\AcuiteCodingChallenge.Repository.csproj">
       <Project>{7ba54a6f-d077-462d-9a49-2791536d58a2}</Project>

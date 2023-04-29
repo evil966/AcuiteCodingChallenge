@@ -1,4 +1,4 @@
-﻿using AcuiteCodingChallenge.Entities;
+﻿using AcuiteCodingChallenge.Core.Entities;
 using AcuiteCodingChallenge.Repository.Context;
 using System;
 using System.Collections.Generic;

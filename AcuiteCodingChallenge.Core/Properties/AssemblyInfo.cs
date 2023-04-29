@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AcuiteCodingChallenge.Entities")]
+[assembly: AssemblyTitle("AcuiteCodingChallenge.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AcuiteCodingChallenge.Entities")]
+[assembly: AssemblyProduct("AcuiteCodingChallenge.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("62d15287-45a0-47a5-bb26-1fd79b8c9cba")]
+[assembly: Guid("e7024586-891f-421f-9062-e4d9c010eba0")]
 
 // Version information for an assembly consists of the following four values:
 //

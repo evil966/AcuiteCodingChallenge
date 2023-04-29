@@ -1,4 +1,6 @@
-﻿namespace AcuiteCodingChallenge.Entities
+﻿using AcuiteCodingChallenge.Core.Constants;
+
+namespace AcuiteCodingChallenge.Core.Entities
 {
 	public class Book
 	{

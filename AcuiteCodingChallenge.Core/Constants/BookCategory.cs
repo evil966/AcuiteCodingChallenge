@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace AcuiteCodingChallenge.Entities
+namespace AcuiteCodingChallenge.Core.Constants
 {
-	public enum BookCategory
+    public enum BookCategory
 	{
 		[Description("Computer Science")]
 		ComputerScience,

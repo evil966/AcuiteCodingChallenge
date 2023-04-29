@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{62D15287-45A0-47A5-BB26-1FD79B8C9CBA}</ProjectGuid>
+    <ProjectGuid>{E7024586-891F-421F-9062-E4D9C010EBA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AcuiteCodingChallenge.Entities</RootNamespace>
-    <AssemblyName>AcuiteCodingChallenge.Entities</AssemblyName>
+    <RootNamespace>AcuiteCodingChallenge.Core</RootNamespace>
+    <AssemblyName>AcuiteCodingChallenge.Core</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="BookCategory.cs" />
+    <Compile Include="Constants\BookCategory.cs" />
+    <Compile Include="Entities\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿using AcuiteCodingChallenge.Entities;
+﻿using AcuiteCodingChallenge.Core.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

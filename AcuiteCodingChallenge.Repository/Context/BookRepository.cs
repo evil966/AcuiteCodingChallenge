@@ -1,4 +1,5 @@
-﻿using AcuiteCodingChallenge.Entities;
+﻿using AcuiteCodingChallenge.Core.Constants;
+using AcuiteCodingChallenge.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
