@@ -16,7 +16,7 @@
                 }, new { @class = "dropdown-item" })
             </li>
             
-            @foreach (KeyValuePair<string, string> category in Model.FilterCategories)
+            @foreach (var category in Model.FilterCategories)
             {
                 <li>
                     @Ajax.ActionLink(category.Key, "category", null,
