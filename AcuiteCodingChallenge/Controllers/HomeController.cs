@@ -7,7 +7,11 @@ namespace AcuiteCodingChallenge.Controllers
 {
     public class HomeController : Controller
 	{
-        public HomeController() => this.ViewData["Categories"] = CategoryOptions.Get();
+		public HomeController()
+		{
+			this.ViewBag.Title = "Home";
+			this.ViewData["Categories"] = CategoryOptions.Get();
+		}
 
 		public async Task<ActionResult> Index()
 		{
