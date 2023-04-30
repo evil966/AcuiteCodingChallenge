@@ -9,9 +9,11 @@ namespace AcuiteCodingChallenge.Controllers
     public class HomeController : Controller
 	{
 		private readonly IndexVm _model;
+		private readonly IBookServices _service;
 		
-		public HomeController()
+		public HomeController(IBookServices service)
 		{
+			_service = service;
 			_model = new IndexVm
             {
                 FilterCategories = CategoryOptions.Get()
@@ -21,7 +23,7 @@ namespace AcuiteCodingChallenge.Controllers
 
 		public async Task<ActionResult> Index()
 		{
-			_model.Books = await BookServices.GetAll();
+			_model.Books = await _service.GetAll();
 			return View(_model);
 		}
 
@@ -29,7 +31,7 @@ namespace AcuiteCodingChallenge.Controllers
 		[ActionName("all")]
 		public async Task<ActionResult> GetAllBooks()
 		{
-			var books = await BookServices.GetAll();
+			var books = await _service.GetAll();
 			return PartialView("_BookListView", books);
 		}
 
@@ -37,7 +39,7 @@ namespace AcuiteCodingChallenge.Controllers
 		[ActionName("category")]
 		public async Task<ActionResult> BooksByCategory(string category)
 		{
-			var books = await BookServices.GetBooksByCategory(category);
+			var books = await _service.GetBooksByCategory(category);
 			return PartialView("_BookListView", books);
 		}
 
@@ -45,7 +47,7 @@ namespace AcuiteCodingChallenge.Controllers
 		[ActionName("title")]
 		public async Task<ActionResult> BooksByTitle(string searchBy)
 		{
-			var books = await BookServices.GetBooksByTitle(searchBy);
+			var books = await _service.GetBooksByTitle(searchBy);
 			return PartialView("_BookListView", books);
 		}
 
@@ -53,7 +55,7 @@ namespace AcuiteCodingChallenge.Controllers
 		[ActionName("author")]
 		public async Task<ActionResult> BooksByAuthor(string searchBy)
 		{
-			var books = await BookServices.GetBooksByAuthor(searchBy);
+			var books = await _service.GetBooksByAuthor(searchBy);
 			return PartialView("_BookListView", books);
 		}
 
