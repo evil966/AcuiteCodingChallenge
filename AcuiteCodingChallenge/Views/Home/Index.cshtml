@@ -1,5 +1,14 @@
 ﻿@model AcuiteCodingChallenge.ViewModels.IndexVm
 
+@{ 
+    var ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "listOfBooks",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    };
+}
+
 <div>
     <div class="dropdown float-end">
         <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -7,26 +16,16 @@
         </button>
         <ul class="dropdown-menu">
             <li>
-                @Ajax.ActionLink("All Books", "all", null,
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                }, new { @class = "dropdown-item" })
+                @Ajax.ActionLink("All Books", "all", null, @ajaxOptions, 
+                new { @class = "dropdown-item" })
             </li>
             
             @foreach (var category in Model.FilterCategories)
             {
                 <li>
                     @Ajax.ActionLink(category.Key, "category", null,
-                    new { category = category.Value},
-                    new AjaxOptions
-                    {
-                        UpdateTargetId = "listOfBooks",
-                        InsertionMode = InsertionMode.Replace,
-                        HttpMethod = "GET"
-                    }, new { @class = "dropdown-item" })
+                    new { category = category.Value}, @ajaxOptions,
+                    new { @class = "dropdown-item" })
                 </li>
             }
         </ul>
@@ -42,24 +41,12 @@
         <ul class="dropdown-menu">
             <li>
                 @Ajax.ActionLink("Author Name", "author", null,
-                new { searchBy = "dummy" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                },
+                new { searchBy = "dummy" }, @ajaxOptions,
                 new { @class = "dropdown-item", @id = "searchByAuthor" })
             </li>
             <li>
                 @Ajax.ActionLink("Book Title", "title", null,
-                new { searchBy = "dummy" },
-                new AjaxOptions
-                {
-                    UpdateTargetId = "listOfBooks",
-                    InsertionMode = InsertionMode.Replace,
-                    HttpMethod = "GET"
-                },
+                new { searchBy = "dummy" }, @ajaxOptions,
                 new { @class = "dropdown-item", @id = "searchByTitle" })
             </li>
         </ul>
@@ -70,8 +57,6 @@
     <div id="listOfBooks">
         @Html.Partial("~/Views/Shared/_BookListView.cshtml", Model.Books)
     </div>
-    
-
 
 </div>
 
