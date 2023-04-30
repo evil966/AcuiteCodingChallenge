@@ -29,32 +29,32 @@ namespace AcuiteCodingChallenge.Controllers
 		[ActionName("all")]
 		public async Task<ActionResult> GetAllBooks()
 		{
-			_model.Books = await BookServices.GetAll();
-			return PartialView("Index", _model);
+			var books = await BookServices.GetAll();
+			return PartialView("_BookListView", books);
 		}
 
 		[HttpGet]
 		[ActionName("category")]
 		public async Task<ActionResult> BooksByCategory(string category)
 		{
-			_model.Books = await BookServices.GetBooksByCategory(category);
-			return PartialView("Index", _model);
+			var books = await BookServices.GetBooksByCategory(category);
+			return PartialView("_BookListView", books);
 		}
 
 		[HttpGet]
 		[ActionName("title")]
 		public async Task<ActionResult> BooksByTitle(string searchBy)
 		{
-			_model.Books = await BookServices.GetBooksByTitle(searchBy);
-			return PartialView("Index", _model);
+			var books = await BookServices.GetBooksByTitle(searchBy);
+			return PartialView("_BookListView", books);
 		}
 
 		[HttpGet]
 		[ActionName("author")]
 		public async Task<ActionResult> BooksByAuthor(string searchBy)
 		{
-			_model.Books = await BookServices.GetBooksByAuthor(searchBy);
-			return PartialView("Index", _model);
+			var books = await BookServices.GetBooksByAuthor(searchBy);
+			return PartialView("_BookListView", books);
 		}
 
 	}
