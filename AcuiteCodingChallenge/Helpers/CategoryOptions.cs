@@ -1,11 +1,11 @@
 ﻿using AcuiteCodingChallenge.Core.Constants;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace AcuiteCodingChallenge.Helpers
 {
+    /// <summary>
+    /// Helper functions for Categories used in select options
+    /// </summary>
     public static class CategoryOptions
     {
         public static Dictionary<string, string> Get()

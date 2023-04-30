@@ -2,6 +2,9 @@
 
 namespace AcuiteCodingChallenge.Core.Entities
 {
+	/// <summary>
+	/// Book poco
+	/// </summary>
 	public class Book
 	{
 		public int Id { get; set; }

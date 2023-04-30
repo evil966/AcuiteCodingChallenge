@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace AcuiteCodingChallenge.Services
 {
+    /// <summary>
+    /// Book Services Interface
+    /// </summary>
     public interface IBookServices
     {
         Task<IEnumerable<Book>> GetAll();

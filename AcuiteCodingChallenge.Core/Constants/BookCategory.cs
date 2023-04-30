@@ -2,6 +2,9 @@
 
 namespace AcuiteCodingChallenge.Core.Constants
 {
+	/// <summary>
+	/// Book Category enum
+	/// </summary>
     public enum BookCategory
 	{
 		[Description("Computer Science")]
