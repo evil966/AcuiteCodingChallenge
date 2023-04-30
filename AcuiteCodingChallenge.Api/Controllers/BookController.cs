@@ -1,5 +1,5 @@
 ﻿using AcuiteCodingChallenge.Core.Entities;
-using AcuiteCodingChallenge.Repository.Context;
+using AcuiteCodingChallenge.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;

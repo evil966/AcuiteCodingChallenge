@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AcuiteCodingChallenge.Repository.Context
+namespace AcuiteCodingChallenge.Infrastructure.Repository.Books
 {
     public class BookRepository : IRepository<Book>
 	{
@@ -98,4 +98,3 @@ namespace AcuiteCodingChallenge.Repository.Context
 		}
 	}
 }
-

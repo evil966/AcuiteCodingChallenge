@@ -200,10 +200,6 @@
       <Project>{e7024586-891f-421f-9062-e4d9c010eba0}</Project>
       <Name>AcuiteCodingChallenge.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AcuiteCodingChallenge.Repository\AcuiteCodingChallenge.Repository.csproj">
-      <Project>{7ba54a6f-d077-462d-9a49-2791536d58a2}</Project>
-      <Name>AcuiteCodingChallenge.Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

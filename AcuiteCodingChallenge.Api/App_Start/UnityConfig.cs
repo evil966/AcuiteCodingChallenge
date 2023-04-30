@@ -1,5 +1,6 @@
 using AcuiteCodingChallenge.Core.Entities;
-using AcuiteCodingChallenge.Repository.Context;
+using AcuiteCodingChallenge.Infrastructure.Repository;
+using AcuiteCodingChallenge.Infrastructure.Repository.Books;
 using System.Web.Http;
 using Unity;
 using Unity.WebApi;

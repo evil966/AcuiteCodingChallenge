@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AcuiteCodingChallenge.Repository.Context
+namespace AcuiteCodingChallenge.Infrastructure.Repository
 {
     public interface IRepository<T> where T : class
 	{
