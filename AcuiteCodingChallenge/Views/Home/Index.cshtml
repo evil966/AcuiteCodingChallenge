@@ -16,15 +16,15 @@
         </button>
         <ul class="dropdown-menu">
             <li>
-                @Ajax.ActionLink("All Books", "all", null, @ajaxOptions, 
+                @Ajax.ActionLink("All Books", "all", null, @ajaxOptions,
                 new { @class = "dropdown-item" })
             </li>
-            
+
             @foreach (var category in Model.FilterCategories)
             {
                 <li>
                     @Ajax.ActionLink(category.Key, "category", null,
-                    new { category = category.Value}, @ajaxOptions,
+                    new { category = category.Value }, @ajaxOptions,
                     new { @class = "dropdown-item" })
                 </li>
             }
@@ -52,8 +52,9 @@
         </ul>
     </div>
 
-    <h3>Books</h3>
+    <h4>Books</h4>
 
+    <br />
     <div id="listOfBooks">
         @Html.Partial("_BookListView", Model.Books)
     </div>

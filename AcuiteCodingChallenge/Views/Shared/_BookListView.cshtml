@@ -1,17 +1,21 @@
 ﻿@model IEnumerable<AcuiteCodingChallenge.Core.Entities.Book>
 
-<table cellpadding="5">
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Catagory</th>
-    </tr>
-    @foreach (var b in Model)
-    {
+<table class="table table-striped table-bordered table-hover">
+    <thead>
         <tr>
-            <td>@b.Title</td>
-            <td>@b.Author</td>
-            <td>@b.Category</td>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Catagory</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Author</td>
+                <td>@b.Category</td>
+            </tr>
+        }
+    </tbody>
 </table>
